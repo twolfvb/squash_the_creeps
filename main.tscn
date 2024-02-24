@@ -89,9 +89,11 @@ autostart = true
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_gkn2u")
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
@@ -103,6 +105,23 @@ offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
 script = ExtResource("5_nr4nv")
+
+[node name="Retry" type="ColorRect" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.133333)
+
+[node name="Label" type="Label" parent="UserInterface/Retry"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 266.0
+offset_right = 485.0
+offset_bottom = 297.0
+text = "Press Enter to retry"
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
